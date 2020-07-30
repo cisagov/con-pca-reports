@@ -27,10 +27,6 @@ repos:
           - --autofix
       - id: requirements-txt-fixer
       - id: trailing-whitespace
-  - repo: https://github.com/adrienverge/yamllint
-    rev: v1.23.0
-    hooks:
-      - id: yamllint
   - repo: https://gitlab.com/pycqa/flake8
     rev: 3.8.3
     hooks:
