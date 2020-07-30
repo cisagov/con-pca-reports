@@ -1,6 +1,6 @@
 data "aws_vpc" "vpc" {
   tags = {
-    Name = "${var.app}-${var.env}-vpc"
+    Name = "${var.app}-vpc"
   }
 }
 
@@ -20,7 +20,7 @@ data "aws_subnet_ids" "private" {
   vpc_id = data.aws_vpc.vpc.id
 
   tags = {
-    Name = "${var.app}-${var.env}-subnet-private*"
+    Name = "${var.app}-subnet-private*"
   }
 }
 
