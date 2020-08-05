@@ -66,6 +66,10 @@ jobs:
       working-directory: ./terraform
       run: terraform validate
 
-    - name: Terraform Apply
+    # - name: Terraform Apply
+    #   working-directory: ./terraform
+    #   run: terraform apply -auto-approve -input=false -var="image_tag=${{needs.build.outputs.tag}}" -var="env=$ENVIRONMENT"
+
+    - name: Terraform Destroy
       working-directory: ./terraform
-      run: terraform apply -auto-approve -input=false -var="image_tag=${{needs.build.outputs.tag}}" -var="env=$ENVIRONMENT"
+      run: terraform destroy -auto-approve -input=false -var="image_tag=${{needs.build.outputs.tag}}" -var="env=$ENVIRONMENT"
